@@ -1,17 +1,11 @@
-import streamlit as st
-
-st.markdown("Version 2. Bringing data from API")
-
-import requests
-
 import pandas as pd
 import numpy as np
-df=pd.read_html('https://www.monasterio-tattersall.com/precios-hacienda') #leo la tabla de la página
+df=pd.read_html('https://www.monasterio-tattersall.com/precios-hacienda') 
 df[0] 
-hacienda = df[0] #asigno una variable a la tabla
-categoria = hacienda.Categoría #creo las series
+hacienda = df[0] 
+categoria = hacienda.Categoría 
 promedio = hacienda.Promedio
-tabla = pd.DataFrame({'categoria':categoria,'promedio':promedio}) #creo un dataframe con categoria y promedio
+tabla = pd.DataFrame({'categoria':categoria,'promedio':promedio}) 
 ternero=tabla[0:4] 
 novillito=tabla[4:7]
 ternera=tabla[7:11]
